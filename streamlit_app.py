@@ -43,22 +43,22 @@ from PIL import Image
 from streamlit_image_zoom import st_image_zoom
 
 # Load your images
-thumbnail1 = Image.open("thumbnail1.jpg")
-thumbnail2 = Image.open("thumbnail2.jpg")
-thumbnail3 = Image.open("thumbnail3.jpg")
-thumbnail4 = Image.open("thumbnail4.jpg")
+thumbnail1 = Image.open("thumb1.jpg")
+thumbnail2 = Image.open("thumb2.jpg")
+thumbnail3 = Image.open("thumb3.jpg")
+thumbnail4 = Image.open("thumb4.jpg")
 
-infographic1 = Image.open("infographic1.jpg")
-infographic2 = Image.open("infographic2.jpg")
-infographic3 = Image.open("infographic3.jpg")
-infographic4 = Image.open("infographic4.jpg")
+infographic1 = Image.open("1.jpg")
+infographic2 = Image.open("2.jpg")
+infographic3 = Image.open("3.jpg")
+infographic4 = Image.open("4.jpg")
 
 # Dictionary to map thumbnails to infographics
 image_map = {
-    "thumbnail1": infographic1,
-    "thumbnail2": infographic2,
-    "thumbnail3": infographic3,
-    "thumbnail4": infographic4
+    "thumb1": 1,
+    "thumb2": 2,
+    "thumb3": 3,
+    "thumb4": 4
 }
 
 # Streamlit layout
