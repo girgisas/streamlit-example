@@ -74,5 +74,5 @@ for i, col in enumerate(columns):
             st.session_state["selected_image"] = f"thumbnail{i+1}"
 
 # Display selected infographic
-if "selected_image" in st.session_state:
-    st_image_zoom(image_map[st.session_state["selected_image"]])
+#if "selected_image" in st.session_state:
+#    st_image_zoom(image_map[st.session_state["selected_image"]])
