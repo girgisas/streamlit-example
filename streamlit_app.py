@@ -40,13 +40,12 @@ st.altair_chart(alt.Chart(df, height=700, width=700)
 """
 import streamlit as st
 from PIL import Image
-from streamlit_image_zoom import st_image_zoom
 
 # Load your images
-thumbnail1 = Image.open("thumb1.jpg")
-thumbnail2 = Image.open("thumb2.jpg")
-thumbnail3 = Image.open("thumb3.jpg")
-thumbnail4 = Image.open("thumb4.jpg")
+thumb1 = Image.open("thumb1.jpg")
+thumb2 = Image.open("thumb2.jpg")
+thumb3 = Image.open("thumb3.jpg")
+thumb4 = Image.open("thumb4.jpg")
 
 infographic1 = Image.open("1.jpg")
 infographic2 = Image.open("2.jpg")
@@ -55,10 +54,10 @@ infographic4 = Image.open("4.jpg")
 
 # Dictionary to map thumbnails to infographics
 image_map = {
-    "thumb1": 1,
-    "thumb2": 2,
-    "thumb3": 3,
-    "thumb4": 4
+    "thumb1": infographic1,
+    "thumb2": infographic2,
+    "thumb3": infographic3,
+    "thumb4": infographic4
 }
 
 # Streamlit layout
@@ -71,8 +70,9 @@ columns = [col1, col2, col3, col4]
 for i, col in enumerate(columns):
     with col:
         if st.button(f"Infographic {i+1}", key=f"button{i+1}"):
-            st.session_state["selected_image"] = f"thumbnail{i+1}"
+            st.session_state["selected_image"] = f"thumb{i+1}"
 
 # Display selected infographic
-#if "selected_image" in st.session_state:
-#    st_image_zoom(image_map[st.session_state["selected_image"]])
+if "selected_image" in st.session_state:
+    # Display the image using Streamlit's native image display
+    st.image(image_map[st.session_state["selected_image"]], use_column_width=True)
