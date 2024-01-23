@@ -52,7 +52,7 @@ infographic2 = Image.open("2.jpg")
 infographic3 = Image.open("3.jpg")
 infographic4 = Image.open("4.jpg")
 
-# Dictionary to map thumbnails to infographics
+# Dictionary to map thumbnail keys to infographics
 image_map = {
     "thumb1": infographic1,
     "thumb2": infographic2,
@@ -63,13 +63,17 @@ image_map = {
 # Streamlit layout
 st.title("Interactive Infographic Viewer")
 
+# Display thumbnails in columns
 col1, col2, col3, col4 = st.columns(4)
+thumbnails = [thumb1, thumb2, thumb3, thumb4]
 columns = [col1, col2, col3, col4]
 
-# Display thumbnails
 for i, col in enumerate(columns):
     with col:
-        if st.button(f"Infographic {i+1}", key=f"button{i+1}"):
+        # Display thumbnail
+        st.image(thumbnails[i], width=150)
+        # Button below the thumbnail
+        if st.button(f'Show Infographic {i+1}', key=f'button{i+1}'):
             st.session_state["selected_image"] = f"thumb{i+1}"
 
 # Display selected infographic
