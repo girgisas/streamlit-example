@@ -14,6 +14,7 @@ info_paths = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
 # Streamlit layout
 st.title("Ashley Girgis | Coding Portfolio")
 
-# Display thumbnails as hyperlinks
-col1, col2, col3, col4 = st.columns(4)
-columns = [col1, col2, col3, col4]
+st.image("thumb1.jpg)
+st.image("thumb2.jpg)
+st.image("thumb3.jpg)
+st.image("thumb4.jpg)
