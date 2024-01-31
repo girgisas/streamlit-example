@@ -15,6 +15,20 @@ col1, col2, col3, col4 = st.columns(4)
 with col1:
    st.image("thumb1.jpg") 
    st.button("Show Infographic", type="primary")
+
+with col2:
+   st.image("thumb2.jpg") 
+   st.button("Show Infographic", type="primary")
+
+with col3:
+   st.image("thumb3.jpg") 
+   st.button("Show Infographic", type="primary")
+
+with col4:
+   st.image("thumb4.jpg") 
+   st.button("Show Infographic", type="primary")
+
+   
    if st.button('Show Infographic'):
         st.session_state["1.jpg"] = f"thumb{i+1}"
         encoded_image = "1.jpg"
