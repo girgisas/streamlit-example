@@ -28,11 +28,6 @@ image_map = {
     "thumb3": infographic3,
     "thumb4": infographic4
 }
-def get_image_as_base64(path):
-    with open(path, "rb") as image_file:
-        encoded = base64.b64encode(image_file.read()).decode()
-    return f"data:image/jpeg;base64,{encoded}"
-
 
 # Display thumbnails in columns
 # Display thumbnails as hyperlinks
@@ -53,22 +48,3 @@ for i, col in enumerate(columns):
 # Check URL parameters for selected infographic
 params = st.experimental_get_query_params()
 selected_info = params.get("selected", None)
-
-# Display selected infographic
-if "selected_image" in st.session_state:
-    # Display the image using Streamlit's native image display
-    st.image(image_map[st.session_state["selected_image"]], use_column_width=True)
-if selected_info:
-    selected_index = int(selected_info[0])
-    if 1 <= selected_index <= 4:
-        infographic_path = info_paths[selected_index - 1]
-        if os.path.exists(infographic_path):
-            st.image(infographic_path, use_column_width=True)
-        else:
-            st.error("Selected infographic not found.")
-    else:
-        st.error("Invalid selection.")
-else:
-    st.write("Please select a thumbnail to view its infographic.")
-
-# Run the app with: streamlit run your_script_name.py
