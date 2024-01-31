@@ -15,9 +15,9 @@ col1, col2, col3, col4 = st.columns(4)
 with col1:
    st.image("thumb1.jpg") 
    st.button("Show Infographic", type="primary")
-   if st.button(f'Show Infographic {i+1}', key=f'button{i+1}'):
-        st.session_state["selected_image"] = f"thumb{i+1}"
-        encoded_image = get_image_as_base64(thumb_paths[i])
+   if st.button('Show Infographic'):
+        st.session_state["1.jpg"] = f"thumb{i+1}"
+        encoded_image = "1.jpg"
         st.markdown(f"<a href='/?selected={i+1}'><img src='{encoded_image}' style='width: 100%;'></a>", unsafe_allow_html=True)
         
 
