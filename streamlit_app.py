@@ -10,9 +10,17 @@ import os
 # Streamlit layout
 st.title("Ashley Girgis | Coding Portfolio")
 
-# Paths to images
-thumb_paths = ["thumb1.jpg", "thumb2.jpg", "thumb3.jpg", "thumb4.jpg"]
-info_paths = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+   st.image("thumb1.jpg") 
+   st.button("Show Infographic", type="primary")
+   if st.button(f'Show Infographic {i+1}', key=f'button{i+1}'):
+        st.session_state["selected_image"] = f"thumb{i+1}"
+        encoded_image = get_image_as_base64(thumb_paths[i])
+        st.markdown(f"<a href='/?selected={i+1}'><img src='{encoded_image}' style='width: 100%;'></a>", unsafe_allow_html=True)
+        
+
 
 # Display thumbnails as hyperlinks
 col1, col2, col3, col4 = st.columns(4)
