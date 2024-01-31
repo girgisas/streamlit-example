@@ -33,9 +33,6 @@ def get_image_as_base64(path):
         encoded = base64.b64encode(image_file.read()).decode()
     return f"data:image/jpeg;base64,{encoded}"
 
-# Paths to images
-thumb_paths = ["thumb1.jpg", "thumb2.jpg", "thumb3.jpg", "thumb4.jpg"]
-info_paths = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
 
 # Display thumbnails in columns
 # Display thumbnails as hyperlinks
